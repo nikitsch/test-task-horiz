@@ -15,4 +15,9 @@
 .link {
   text-decoration: none;
   color: white;
+  transition: .2s;
+}
+
+.link:hover {
+  transform: scale(1.1);
 }
