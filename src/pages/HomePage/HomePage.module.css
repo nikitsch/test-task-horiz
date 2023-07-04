@@ -1,0 +1,16 @@
+.error {
+  text-align: center;
+  margin-top: 13rem;
+  font-weight: 700;
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem; /* 28px */
+  color: red
+}
+
+.loading {
+  text-align: center;
+  margin-top: 13rem;
+  font-weight: 700;
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem; /* 28px */
+}
