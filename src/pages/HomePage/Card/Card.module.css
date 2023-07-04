@@ -10,6 +10,11 @@
   line-height: 1.5rem; /* 28px */
   border-radius: 1rem; /* 16px */
   margin-bottom: 10px;
+  transition: .5s;
+}
+
+.card:hover {
+  transform: scale(0.9);
 }
 
 .image {

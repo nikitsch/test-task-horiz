@@ -11,7 +11,7 @@ export function HomePage() {
       {isLoading && <p className={style.loading}>Loading...</p>}
 
       <div className={style.container}>
-        {products?.map(item => <Card item={item} key={item.id} />)}
+        {products?.map(item => <Card product={item} key={item.id} />)}
       </div>
     </>
   )

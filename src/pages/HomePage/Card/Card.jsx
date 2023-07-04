@@ -1,11 +1,15 @@
+import { Link } from "react-router-dom"
 import style from "./Card.module.css"
 
-export function Card({item}) {
+export function Card({ product }) {
+  // console.log(product.id);
   return (
-    <div className={style.card}>
-      <img className={style.image} src={item.image} alt="" />
-      <h3 className={style.title}>{item.title}</h3>
-      {/* <h2 className={style.price}>{item.price} BYN</h2> */}
-    </div>
+    <Link to={`/product/${product.id}`} className={style.link} style={{ textDecoration: 'none' }}>
+      <div className={style.card}>
+        <img className={style.image} src={product.image} alt="" />
+        <h3 className={style.title}>{product.title}</h3>
+        {/* <h2 className={style.price}>{product.price} BYN</h2> */}
+      </div>
+    </Link>
   )
 }
