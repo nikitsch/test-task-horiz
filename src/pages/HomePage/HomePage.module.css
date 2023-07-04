@@ -14,3 +14,13 @@
   font-size: 1.25rem; /* 20px */
   line-height: 1.75rem; /* 28px */
 }
+
+.container {
+  display: grid;
+  gap: 1rem; /* 16px */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  width: 80%;
+  margin: 25px auto 0;
+  box-sizing: border-box;
+}
