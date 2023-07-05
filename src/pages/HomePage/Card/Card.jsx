@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
+import { Button } from "../../../components/Button/Buttom"
 import { useActions } from "../../../store/shopAPI/actions"
 import style from "./Card.module.css"
 
@@ -28,12 +29,15 @@ export function Card({ product }) {
       <div className={style.card}>
         <img className={style.image} src={product.image} alt="" />
         <h3 className={style.title}>{product.title.length > 64 ? product.title.slice(0, 63) + "..." : product.title}</h3>
-        {/* <h2 className={style.price}>{product.price} BYN</h2> */}
-
+        
+        <div className={style.bottom}>
+        <h2 className={style.price}>{product.price}$</h2>
         {!isShop
-          ? <button onClick={addToBasket} style={{cursor: "pointer", backgroundColor: "green"}}>+</button>
-          : <button onClick={removeToBasket} style={{cursor: "pointer", backgroundColor: "red"}}>-</button>
+          ? <Button onClick={addToBasket} text={"Add"} bColor={"#d1d5db"}/>
+          : <Button onClick={removeToBasket} text={"Remove"} bColor={"rgb(110, 41, 41)"}/>
         }
+        </div>
+
       </div>
     </Link>
   )

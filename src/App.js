@@ -1,6 +1,6 @@
 // import './App.css';
 import { Routes, Route } from "react-router-dom"
-import { Navigation } from "./components/Navigate";
+import { Navigation } from "./components/Navigate/Navigate";
 import { BasketPage } from "./pages/BasketPage/BasketPage";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { SelectedPage } from "./pages/SelectedPage/SelectedPage";
