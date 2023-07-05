@@ -8,7 +8,7 @@ export function Card({ product }) {
 
   const {addBasket, removeBasket} = useActions()
   const {basket} = useSelector(state => state.shop)
-  console.log(basket)
+
   const [isShop, setIsShop] = useState(basket.includes(product.id))
 
   const addToBasket = (event) => {
