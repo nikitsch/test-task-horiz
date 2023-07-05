@@ -9,7 +9,7 @@ export const shopApi = createApi({
   endpoints: build => ({
     searchProducts: build.query({
       query: () => ({
-        url: `products?limit=12`
+        url: `products`
       })
     })
   })
