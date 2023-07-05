@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
 import { useActions } from "../../store/shopAPI/actions";
 import { useSearchProductsQuery } from "../../store/shopAPI/shop.api";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import style from "./BasketPage.module.css"
+import { Button } from "../../components/Button/Buttom";
 
 export function BasketPage() {
 
@@ -13,10 +14,6 @@ export function BasketPage() {
   const { basket } = useSelector(state => state.shop)
   const goods = products?.filter(el => basket.includes(el.id))
   const count = goods?.map(cost => cost.price).reduce((p, c) => p + c, 0)
-  // const removeToBasket = (event) => {
-  //   event.preventDefault()
-  //   removeBasket()
-  // }
 
   return (
     <>
@@ -33,24 +30,25 @@ export function BasketPage() {
                     <img className={style.image} src={item.image} alt="" />
                     <h1 className={style.title}>{item.title}</h1>
                     <h1 className={style.price}>{item.price}$</h1>
-                    <button className={style.remove} onClick={((event) => {
+                    <Button onClick={((event) => {
                       event.preventDefault()
                       removeBasket(item.id)
-                    })}>-</button>
+                    })} text={"Delete"} bColor={"rgb(110, 41, 41)"} />
                   </div>
                 )
               })}
-              <Link to="/">
-                  <div className={style.contButton}>
-                    <h3>Price: {count}$</h3>
-                    <button className={style.buttonBuy}
-                      onClick={() => {
-                        alert("Congratulations! We bought the goods.")
-                        goods?.map(j => removeBasket(j.id))
-                      }}>
-                      Buy
-                    </button>
-                  </div>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <div className={style.contButton}>
+                  <h3 className={style.countPrice}>Total price: {count}$</h3>
+                  {/* <Button onClick={addToBasket} text={"Buy"} bColor={"#0d9488"}/> */}
+                  <button className={style.buttonBuy}
+                    onClick={() => {
+                      alert(`Congratulations! We bought a product worth ${count}$`)
+                      goods?.map(j => removeBasket(j.id))
+                    }}>
+                    Buy
+                  </button>
+                </div>
               </Link>
             </>
 

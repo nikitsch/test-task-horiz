@@ -65,40 +65,54 @@
   padding-right: 1.25rem; /* 20px */
 }
 
-.remove {
-  grid-column: span 1 / span 1;
-  cursor: pointer;
-  background-color: red;
-}
-
 .notSelected {
   text-align: center;
   margin-top: 13rem;
   font-weight: 700;
   font-size: 1.25rem;
-  /* 20px */
   line-height: 1.75rem;
-  /* 28px */
   color: #0d9488;
 }
-/* "relative items-center text-center justify-center w-3/4 mx-auto text-m mt-[20px]grid gap-0 grid-cols-6" */
-.contButton {
 
+.contButton {
+  display: grid;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: 20px auto;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0px;
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem; /* 28px */
+  font-weight: 700;
 }
-/* col-end-7
-py-2
-px-4
-bg-[#0d9488]
-text-white
-rounded
-hover:shadow-xl
-hover:scale-105
-transition-all
-text-[#0d9488]
-font-bold
-uppercase */
+
+.countPrice {
+  grid-area: 1 / 5 / 2 / 7;
+  color: rgb(110, 41, 41);
+}
+
 .buttonBuy{
-  
+  border: none;
+  outline: none;
+  grid-area: 1 / 7 / 2 / 8;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  background-color: #0d9488;
+  color: white;
+  border-radius: 0.25rem;
+  /* transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms; */
+  text-transform: uppercase;
+  transition: .5s;
+}
+.buttonBuy:hover {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  transform: scale(1.05);
 }
 
 .anim {
