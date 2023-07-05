@@ -15,6 +15,20 @@
   line-height: 1.75rem; /* 28px */
 }
 
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 1.25rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem; /* 28px */
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: #0d9488;
+}
+
 .container {
   display: grid;
   gap: 1rem; /* 16px */
