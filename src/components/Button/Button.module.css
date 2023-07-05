@@ -6,4 +6,9 @@
   line-height: 1.5rem; /* 28px */
   border-radius: 1rem; /* 16px */
   color: #0d9488;
+  transition: .5s;
+}
+
+.button:hover {
+  transform: scale(1.05);
 }
