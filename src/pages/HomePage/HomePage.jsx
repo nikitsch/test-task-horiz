@@ -4,7 +4,7 @@ import style from "./HomePage.module.css"
 
 export function HomePage() {
   const { isLoading, isError, data: products } = useSearchProductsQuery()
-  // console.log(products.map(i => i.title));
+
   return (
     <>
       {isError && <p className={style.error}>Something went wrong...</p>}

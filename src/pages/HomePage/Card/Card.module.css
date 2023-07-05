@@ -11,6 +11,7 @@
   border-radius: 1rem; /* 16px */
   margin-bottom: 10px;
   transition: .5s;
+  cursor: help;
 }
 
 .card:hover {
