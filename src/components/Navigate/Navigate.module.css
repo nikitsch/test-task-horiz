@@ -35,25 +35,3 @@
   text-align: center;
   color: rgb(110, 41, 41);
 }
-/* .container {
-  display: inline-block;
-  position: relative;
-}
-
-.span {
-  display: inline-block;
-  background: #ccc;
-  color: #000;
-  text-align: center;
-  border-radius: 50%;
-  padding: 50% 0;
-  width: 100%;
-  position: absolute;
-  transform: translateY(-50%);
-}
-
-.text {
-  position: relative;
-  top: -.5em;
-  padding: 0em 0.65em;
-} */
