@@ -22,12 +22,12 @@ export function Card({ product }) {
     removeBasket(product.id)
     setIsShop(false)
   }
-
+// console.log(product.title.length);
   return (
     <Link to={`/product/${product.id}`} className={style.link} style={{ textDecoration: 'none' }}>
       <div className={style.card}>
         <img className={style.image} src={product.image} alt="" />
-        <h3 className={style.title}>{product.title}</h3>
+        <h3 className={style.title}>{product.title.length > 64 ? product.title.slice(0, 63) + "..." : product.title}</h3>
         {/* <h2 className={style.price}>{product.price} BYN</h2> */}
 
         {!isShop
