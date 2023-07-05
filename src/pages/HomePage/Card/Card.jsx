@@ -27,7 +27,10 @@ export function Card({ product }) {
   return (
     <Link to={`/product/${product.id}`} className={style.link} style={{ textDecoration: 'none' }}>
       <div className={style.card}>
+        <div className={style.contImage}>
         <img className={style.image} src={product.image} alt="" />
+        </div>
+        
         <h3 className={style.title}>{product.title.length > 64 ? product.title.slice(0, 63) + "..." : product.title}</h3>
         
         <div className={style.bottom}>
