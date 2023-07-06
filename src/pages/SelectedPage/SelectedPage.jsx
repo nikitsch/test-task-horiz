@@ -19,7 +19,9 @@ export function SelectedPage() {
       {isLoading
         ? <p className={style.loading}>Loading...</p>
         : <div className={style.container}>
-          <img className={style.image} src={good.image} alt="" />
+          <div className={style.contImage}>
+            <img className={style.image} src={good.image} alt="" />
+          </div>
           <div className={style.infoBlock}>
             <h1 className={style.title}>{good.title}</h1>
             <h3 className={style.description}>{good.description}</h3>
