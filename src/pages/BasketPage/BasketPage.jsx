@@ -13,7 +13,7 @@ export function BasketPage() {
 
   const { basket } = useSelector(state => state.shop)
   const goods = products?.filter(el => basket.includes(el.id))
-  const count = goods?.map(cost => cost.price).reduce((p, c) => p + c, 0)
+  const count = Math.ceil(goods?.map(cost => cost.price).reduce((p, c) => p + c, 0)*100)/100
 
   return (
     <>
