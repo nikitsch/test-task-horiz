@@ -26,21 +26,23 @@ export function BasketPage() {
             ? <>
               {goods?.map(item => {
                 return (
-                  <div key={item.id} className={style.prod}>
-                    <img className={style.image} src={item.image} alt="" />
-                    <h1 className={style.title}>{item.title}</h1>
-                    <h1 className={style.price}>{item.price}$</h1>
-                    <Button onClick={((event) => {
-                      event.preventDefault()
-                      removeBasket(item.id)
-                    })} text={"Delete"} bColor={"rgb(110, 41, 41)"} />
-                  </div>
+                  <Link to={`/product/${item.id}`} style={{ textDecoration: 'none', cursor: "help" }}>
+                    <div key={item.id} className={style.prod}>
+                      <img className={style.image} src={item.image} alt="" />
+                      <h1 className={style.title}>{item.title}</h1>
+                      <h1 className={style.price}>{item.price}$</h1>
+                      <Button onClick={((event) => {
+                        event.preventDefault()
+                        removeBasket(item.id)
+                      })} text={"Delete"} bColor={"rgb(110, 41, 41)"} />
+                    </div>
+                  </Link>
                 )
               })}
-              <Link to="/" style={{ textDecoration: "none" }}>
-                <div className={style.contButton}>
-                  <h3 className={style.countPrice}>Total price: {count}$</h3>
-                  {/* <Button onClick={addToBasket} text={"Buy"} bColor={"#0d9488"}/> */}
+              <div className={style.contButton}>
+                <h3 className={style.countPrice}>Total price: {count}$</h3>
+                {/* <Button onClick={addToBasket} text={"Buy"} bColor={"#0d9488"}/> */}
+                <Link to="/" className={style.linkBuy}>
                   <button className={style.buttonBuy}
                     onClick={() => {
                       alert(`Congratulations! We bought a product worth ${count}$`)
@@ -48,8 +50,8 @@ export function BasketPage() {
                     }}>
                     Buy
                   </button>
-                </div>
-              </Link>
+                </Link>
+              </div>
             </>
 
             : <div className={style.notSelected}>You have not selected a product. Please return to the main page and add the item to your <span className={style.anim}>basket</span></div>
