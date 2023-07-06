@@ -96,10 +96,15 @@
   color: rgb(110, 41, 41);
 }
 
+.linkBuy {
+  text-decoration: none;
+  grid-area: 1 / 7 / 2 / 8;
+  cursor: auto;
+}
+
 .buttonBuy{
   border: none;
   outline: none;
-  grid-area: 1 / 7 / 2 / 8;
   padding: 0.5rem 1rem 0.5rem 1rem;
   background-color: #0d9488;
   color: white;
@@ -109,6 +114,7 @@
   transition-duration: 150ms; */
   text-transform: uppercase;
   transition: .5s;
+  cursor: pointer;
 }
 .buttonBuy:hover {
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);

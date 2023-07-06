@@ -7,8 +7,8 @@ import style from "./Card.module.css"
 
 export function Card({ product }) {
 
-  const {addBasket, removeBasket} = useActions()
-  const {basket} = useSelector(state => state.shop)
+  const { addBasket, removeBasket } = useActions()
+  const { basket } = useSelector(state => state.shop)
 
   const [isShop, setIsShop] = useState(basket.includes(product.id))
 
@@ -23,22 +23,22 @@ export function Card({ product }) {
     removeBasket(product.id)
     setIsShop(false)
   }
-// console.log(product.title.length);
+  // console.log(product.title.length);
   return (
-    <Link to={`/product/${product.id}`} className={style.link} style={{ textDecoration: 'none' }}>
+    <Link to={`/product/${product.id}`} style={{ textDecoration: 'none' }}>
       <div className={style.card}>
         <div className={style.contImage}>
-        <img className={style.image} src={product.image} alt="" />
+          <img className={style.image} src={product.image} alt="" />
         </div>
-        
+
         <h3 className={style.title}>{product.title.length > 64 ? product.title.slice(0, 63) + "..." : product.title}</h3>
-        
+
         <div className={style.bottom}>
-        <h2 className={style.price}>{product.price}$</h2>
-        {!isShop
-          ? <Button onClick={addToBasket} text={"Add"} bColor={"#d1d5db"}/>
-          : <Button onClick={removeToBasket} text={"Remove"} bColor={"rgb(110, 41, 41)"}/>
-        }
+          <h2 className={style.price}>{product.price}$</h2>
+          {!isShop
+            ? <Button onClick={addToBasket} text={"Add"} bColor={"#d1d5db"} />
+            : <Button onClick={removeToBasket} text={"Remove"} bColor={"rgb(110, 41, 41)"} />
+          }
         </div>
 
       </div>
